@@ -1,21 +1,27 @@
 const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
 
+// game size
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 class Boundary {
   static width = 40;
   static height = 40;
+  static color = "blue";
+
   constructor({ position }) {
     this.position = position;
-    this.width = 40;
-    this.height = 40;
   }
 
   draw() {
-    c.fillStyle = "blue";
-    c.fillRect(this.position.x, this.position.y, this.width, this.height);
+    c.fillStyle = Boundary.color;
+    c.fillRect(
+      this.position.x,
+      this.position.y,
+      Boundary.width,
+      Boundary.height
+    );
   }
 }
 
